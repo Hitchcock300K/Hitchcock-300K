@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hitchcock-300K</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .project-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      color: #2d7ff9;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+
+    .authors {
+      font-size: 16px;
+      color: #4a4a4a;
+      margin-bottom: 24px;
+    }
+
+    .authors span {
+      margin: 0 8px;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .abstract {
+      max-width: 780px;
+      margin: 0 auto 28px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #333;
+      text-align: justify;
+    }
+
+    .video-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      background: #000;
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 28px;
+      }
+
+      .authors {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .abstract {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="project-name">HITCHCOCK-300K</div>
+      <h1 class="title">
+        Hitchcock-300K: A Master-Level Camera Control Dataset for
+        Video Generation and Editing
+      </h1>
+      <div class="authors">
+        <span>Anonymous Author 1</span>
+        <span>Anonymous Author 2</span>
+        <span>Anonymous Author 3</span>
+        <span>Anonymous Author 4</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Abstract</div>
+      <div class="abstract">
+        Camera control is essential for cinematic video generation, dictating shot composition and viewer perception. However, existing datasets are primarily limited to basic camera translation and rotation. They critically lack both advanced camera trajectories and dynamic focus control, while also suffering from severe bottlenecks in scene and character diversity. These limitations hinder models from synthesizing professional cinematic effects and generalizing to real-world applications. To address these gaps, we propose Hitchcock-300K, a large-scale, master-level dataset specifically designed for camera-controlled video generation and editing. Constructed via Unreal Engine 5, the dataset contains 300,000 high-quality video clips paired with precise frame-by-frame ground truth for both camera intrinsics and extrinsics. Hitchcock-300K features three core advantages: comprehensive camera movements encompassing complex cinematic trajectories, dynamic focus control enabling operations like rack focus and dolly zoom, and unprecedented content diversity comprising over 1,700 scenes and 500 characters. Extensive experiments demonstrate that models trained on Hitchcock-300K significantly outperform existing baselines across various camera editing tasks and exhibit promising generalization to real-world videos. Our dataset, model, and empirical findings establish a robust foundation for advancing camera-controlled video generation.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Demo Video</div>
+      <div class="video-wrapper">
+        <video controls autoplay muted loop playsinline>
+          <source src="assets/demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">Placeholder teaser video.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
 
