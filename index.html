@@ -22,6 +22,10 @@
           box-sizing: border-box;
         }
 
+        html {
+          scroll-behavior: smooth;
+        }
+
         body {
           margin: 0;
           background: var(--bg);
@@ -33,6 +37,12 @@
           max-width: 1100px;
           margin: 0 auto;
           padding: 48px 20px 88px;
+        }
+
+        .wide-container {
+          max-width: 1380px;
+          margin: 0 auto;
+          padding: 0 20px;
         }
 
         .hero {
@@ -70,7 +80,7 @@
         }
 
         .section {
-          margin-top: 42px;
+          margin-top: 44px;
         }
 
         .section-title {
@@ -82,7 +92,7 @@
         }
 
         .section-subtitle {
-          max-width: 850px;
+          max-width: 900px;
           margin: 0 auto 20px;
           font-size: 15px;
           line-height: 1.8;
@@ -118,6 +128,16 @@
           box-shadow: var(--shadow);
         }
 
+        .wide-media-card {
+          max-width: 1380px;
+          margin: 0 auto;
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 18px;
+          box-shadow: var(--shadow);
+        }
+
         .figure-image {
           width: 100%;
           display: block;
@@ -140,6 +160,16 @@
           background: #fff;
           border: 1px solid var(--line);
           border-radius: 16px;
+          padding: 18px;
+          box-shadow: var(--shadow);
+        }
+
+        .wide-video-wrapper {
+          max-width: 1380px;
+          margin: 0 auto;
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 18px;
           padding: 18px;
           box-shadow: var(--shadow);
         }
@@ -185,13 +215,45 @@
           line-height: 1.7;
         }
 
+        .demo-group {
+          max-width: 1040px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .demo-block {
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          padding: 18px;
+          box-shadow: var(--shadow);
+        }
+
+        .demo-title {
+          font-size: 20px;
+          font-weight: 700;
+          margin: 0 0 12px;
+          text-align: center;
+          color: var(--text);
+        }
+
+        .demo-desc {
+          font-size: 14px;
+          line-height: 1.75;
+          color: var(--muted);
+          text-align: center;
+          margin: 0 0 14px;
+        }
+
         .results-card {
           max-width: 1100px;
           margin: 0 auto;
           background: #fff;
           border: 1px solid var(--line);
           border-radius: 16px;
-          padding: 18px 18px 18px;
+          padding: 18px;
           box-shadow: var(--shadow);
         }
 
@@ -293,15 +355,6 @@
           padding: 10px 8px;
         }
 
-        .placeholder-text {
-          max-width: 860px;
-          margin: 0 auto;
-          font-size: 15px;
-          line-height: 1.8;
-          color: var(--muted);
-          text-align: center;
-        }
-
         @media (max-width: 900px) {
           .human-eval-grid {
             grid-template-columns: 1fr;
@@ -309,8 +362,15 @@
         }
 
         @media (max-width: 768px) {
+          .container,
+          .wide-container {
+            padding-left: 14px;
+            padding-right: 14px;
+          }
+
           .container {
-            padding: 32px 14px 70px;
+            padding-top: 32px;
+            padding-bottom: 70px;
           }
 
           .title {
@@ -336,7 +396,8 @@
           }
 
           .table-title,
-          .subtable-title {
+          .subtable-title,
+          .demo-title {
             font-size: 15px;
           }
 
@@ -344,7 +405,7 @@
           .caption,
           .figure-caption,
           .section-subtitle,
-          .placeholder-text {
+          .demo-desc {
             font-size: 14px;
           }
         }
@@ -387,55 +448,71 @@
         </div>
         <div class="media-card">
             <img
-                    class="figure-image"
-                    src="assets/overview.png"
-                    alt="Main figure of Hitchcock-300K"
+                class="figure-image"
+                src="assets/overview.png"
+                alt="Main figure of Hitchcock-300K"
             />
         </div>
     </div>
+</div>
 
+<div class="wide-container">
+    <div class="section">
+        <div class="section-title">Dataset Showcase</div>
+        <div class="section-subtitle">
+            A large-scale view of Hitchcock-300K. The video below stitches together a dense grid of samples to highlight
+            the dataset’s scale, diversity, and coverage of cinematic camera control.
+        </div>
+        <div class="wide-video-wrapper">
+            <video controls autoplay muted loop playsinline>
+                <source src="assets/dataset_show.mp4" type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <div class="section">
         <div class="section-title">Demo Videos</div>
         <div class="section-subtitle">
-            We showcase both basic and advanced camera control patterns covered by Hitchcock-300K.
+            We present representative editing demos for both basic camera motions and more advanced cinematic controls.
         </div>
-    </div>
 
-    <div class="section">
-        <div class="section-title">Basic Motion</div>
-        <div class="video-wrapper">
-            <div class="video-grid-header cols-5">
-                <div class="video-col-label">Boom</div>
-                <div class="video-col-label">Truck</div>
-                <div class="video-col-label">Push</div>
-                <div class="video-col-label">Tilt</div>
-                <div class="video-col-label">Pan</div>
+        <div class="demo-group">
+            <div class="demo-block">
+                <div class="demo-title">Basic Motion</div>
+                <div class="demo-desc">
+                    Basic motion examples arranged in a 2×5 grid, covering five canonical camera control categories.
+                </div>
+                <div class="video-grid-header cols-5">
+                    <div class="video-col-label">Boom</div>
+                    <div class="video-col-label">Truck</div>
+                    <div class="video-col-label">Push</div>
+                    <div class="video-col-label">Tilt</div>
+                    <div class="video-col-label">Pan</div>
+                </div>
+                <video controls autoplay muted loop playsinline>
+                    <source src="assets/basic.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            <video controls autoplay muted loop playsinline>
-                <source src="assets/basic.mp4" type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-            <div class="caption">
-                Basic motion examples arranged in a 2×5 grid, covering five canonical camera control categories.
-            </div>
-        </div>
-    </div>
 
-    <div class="section">
-        <div class="section-title">Advanced Motion</div>
-        <div class="video-wrapper">
-            <div class="video-grid-header cols-4">
-                <div class="video-col-label">Source Videos</div>
-                <div class="video-col-label">Synthesized Videos</div>
-                <div class="video-col-label">Source Videos</div>
-                <div class="video-col-label">Synthesized Videos</div>
-            </div>
-            <video controls autoplay muted loop playsinline>
-                <source src="assets/advanced.mp4" type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-            <div class="caption">
-                Advanced motion demos with side-by-side source and synthesized video comparisons.
+            <div class="demo-block">
+                <div class="demo-title">Advanced Motion</div>
+                <div class="demo-desc">
+                    Advanced motion demos with side-by-side source and synthesized video comparisons.
+                </div>
+                <div class="video-grid-header cols-4">
+                    <div class="video-col-label">Source Videos</div>
+                    <div class="video-col-label">Synthesized Videos</div>
+                    <div class="video-col-label">Source Videos</div>
+                    <div class="video-col-label">Synthesized Videos</div>
+                </div>
+                <video controls autoplay muted loop playsinline>
+                    <source src="assets/advanced.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </div>
@@ -541,9 +618,9 @@
                     complementing the aggregated benchmark results above.
                 </div>
                 <img
-                        class="figure-image"
-                        src="assets/radars.png"
-                        alt="Radar chart of fine-grained results"
+                    class="figure-image"
+                    src="assets/radars.png"
+                    alt="Radar chart of fine-grained results"
                 />
                 <div class="figure-caption">
                     Per-category analysis over motion subtypes. This figure highlights method behavior on individual
@@ -658,10 +735,10 @@
                 <div class="table-desc">
                     We study whether richer language instructions can improve camera-motion editing. Specifically, we
                     rewrite concise prompts into more informative, cinematography-aware descriptions and apply the same
-                    rewriting pipeline during both training and inference. The results show consistent gains in <strong>camera
-                    accuracy</strong> and <strong>structural alignment</strong>, while low-level visual quality metrics
-                    remain nearly unchanged. This suggests that prompt engineering mainly helps precise camera control
-                    and scene-consistent editing, rather than visual realism itself.
+                    rewriting pipeline during both training and inference. The results show consistent gains in
+                    <strong>camera accuracy</strong> and <strong>structural alignment</strong>, while low-level visual
+                    quality metrics remain nearly unchanged. This suggests that prompt engineering mainly helps precise
+                    camera control and scene-consistent editing, rather than visual realism itself.
                 </div>
                 <div class="table-scroll">
                     <table>
@@ -713,9 +790,8 @@
     <div class="section">
         <div class="section-title">Visual Comparison with Baselines</div>
         <div class="section-subtitle">
-            这里放和baseline的可视化对比视频，需要选一下<br>
-            Below we provide a qualitative comparison video between our method and baseline approaches, highlighting
-            differences in motion fidelity, temporal consistency, and cinematic controllability.
+            We provide qualitative comparisons with baseline methods to highlight differences in motion fidelity,
+            temporal consistency, and overall cinematic controllability.
         </div>
         <div class="video-wrapper">
             <video controls autoplay muted loop playsinline>
@@ -723,8 +799,8 @@
                 Your browser does not support the video tag.
             </video>
             <div class="caption">
-                Placeholder comparison video. Replace this with side-by-side results to demonstrate the advantages of
-                Hitchcock-300K and the model trained on it.
+                Qualitative comparison with baseline approaches. Replace this placeholder with the selected side-by-side
+                comparison video.
             </div>
         </div>
     </div>
