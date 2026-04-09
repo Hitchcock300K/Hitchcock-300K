@@ -80,6 +80,43 @@
           white-space: nowrap;
         }
 
+        .hero-links {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+          margin-top: 18px;
+        }
+
+        .hero-link-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 16px;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          background: #fff;
+          color: var(--text);
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 700;
+          box-shadow: var(--shadow);
+          transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+
+        .hero-link-btn:hover {
+          transform: translateY(-1px);
+          border-color: #cfe0ff;
+          box-shadow: 0 12px 32px rgba(20, 35, 90, 0.12);
+        }
+
+        .hero-link-btn svg {
+          width: 20px;
+          height: 20px;
+          flex: 0 0 20px;
+        }
+
         .section {
           margin-top: 52px;
         }
@@ -400,6 +437,11 @@
           .demo-desc {
             font-size: 14px;
           }
+
+          .hero-link-btn {
+            width: 100%;
+            justify-content: center;
+          }
         }
     </style>
 </head>
@@ -412,10 +454,25 @@
             Video Generation and Editing
         </h1>
         <div class="authors">
-            <span>Anonymous Author 1</span>
-            <span>Anonymous Author 2</span>
-            <span>Anonymous Author 3</span>
-            <span>Anonymous Author 4</span>
+            <span>Anonymous Authors</span>
+        </div>
+
+        <div class="hero-links">
+            <a
+                class="hero-link-btn"
+                href="https://drive.google.com/drive/folders/1rqaL0u6acU1XIhv3RLscrBvhmIKlG4Id?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Google Drive for code and dataset"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#0F9D58" d="M8.59 3 2 14.5h4.83L13.41 3z"/>
+                    <path fill="#4285F4" d="M13.41 3H8.59l6.58 11.5H20z"/>
+                    <path fill="#F4B400" d="M6.83 14.5 10.41 21H17l-3.41-6.5z"/>
+                    <path fill="#DB4437" d="M2 14.5 5.59 21h4.82l-3.58-6.5z"/>
+                </svg>
+                <span>Code &amp; Dataset</span>
+            </a>
         </div>
     </div>
 
@@ -440,9 +497,9 @@
         </div>
         <div class="media-card">
             <img
-                    class="figure-image"
-                    src="assets/overview.png"
-                    alt="Overview of Hitchcock-300K"
+                class="figure-image"
+                src="assets/overview.png"
+                alt="Overview of Hitchcock-300K"
             />
         </div>
     </div>
@@ -611,9 +668,9 @@
                     complementing the aggregated benchmark results above.
                 </div>
                 <img
-                        class="figure-image"
-                        src="assets/radars.png"
-                        alt="Radar chart of fine-grained results"
+                    class="figure-image"
+                    src="assets/radars.png"
+                    alt="Radar chart of fine-grained results"
                 />
                 <div class="figure-caption">
                     Per-category analysis over representative motion subtypes beyond the aggregated benchmark metrics.
@@ -722,8 +779,7 @@
                 <div class="table-desc">
                     We study whether richer language instructions improve camera-motion editing. By rewriting concise
                     prompts into more informative, cinematography-aware descriptions for both training and inference, we
-                    observe consistent gains in <strong>camera accuracy</strong> and <strong>structural
-                    alignment</strong>,
+                    observe consistent gains in <strong>camera accuracy</strong> and <strong>structural alignment</strong>,
                     indicating better camera control and scene-consistent editing.
                 </div>
 
@@ -797,7 +853,6 @@
                 From top to bottom, the five cases correspond to boom, spiral orbit, zoom, Hitchcock zoom, and rack
                 focus.
             </div>
-
         </div>
     </div>
 </div>
