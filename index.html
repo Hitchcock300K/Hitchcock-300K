@@ -220,6 +220,26 @@
           line-height: 1.7;
         }
 
+        .baseline-stack {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        .baseline-block-title {
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--text);
+          text-align: center;
+          margin: 0 0 14px;
+        }
+
+        .baseline-divider {
+          max-width: 1000px;
+          height: 1px;
+          margin: 28px auto;
+          background: var(--line-strong);
+        }
+
         .demo-group {
           max-width: 1040px;
           margin: 0 auto;
@@ -838,20 +858,42 @@
             complex camera trajectories and optical effects, enabling more expressive cinematic editing.
         </div>
 
-        <div class="video-wrapper">
-            <div class="video-grid-header cols-4">
-                <div class="video-col-label">Source Video</div>
-                <div class="video-col-label">ReCamMaster</div>
-                <div class="video-col-label">CamCloneMaster</div>
-                <div class="video-col-label">Ours (Hitchcock-300K)</div>
+        <div class="baseline-stack">
+            <div class="video-wrapper">
+                <div class="baseline-block-title">Synthetic Data Domain</div>
+                <div class="video-grid-header cols-4">
+                    <div class="video-col-label">Source Video</div>
+                    <div class="video-col-label">ReCamMaster</div>
+                    <div class="video-col-label">CamCloneMaster</div>
+                    <div class="video-col-label">Ours (Hitchcock-300K)</div>
+                </div>
+                <video controls autoplay muted loop playsinline>
+                    <source src="assets/baseline_compare.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <div class="caption">
+                    From top to bottom, the five cases correspond to boom, spiral orbit, zoom, Hitchcock zoom, and rack
+                    focus.
+                </div>
             </div>
-            <video controls autoplay muted loop playsinline>
-                <source src="assets/baseline_compare.mp4" type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-            <div class="caption">
-                From top to bottom, the five cases correspond to boom, spiral orbit, zoom, Hitchcock zoom, and rack
-                focus.
+
+            <div class="baseline-divider"></div>
+
+            <div class="video-wrapper">
+                <div class="baseline-block-title">Natural Data Domain</div>
+                <div class="video-grid-header cols-4">
+                    <div class="video-col-label">Source Video</div>
+                    <div class="video-col-label">ReCamMaster</div>
+                    <div class="video-col-label">CamCloneMaster</div>
+                    <div class="video-col-label">Ours (Hitchcock-300K)</div>
+                </div>
+                <video controls autoplay muted loop playsinline>
+                    <source src="assets/natural_baseline_compare_codex.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <div class="caption">
+                    From top to bottom, the four cases correspond to rotation, orbit lift, whip pan, and Hitchcock zoom.
+                </div>
             </div>
         </div>
     </div>
